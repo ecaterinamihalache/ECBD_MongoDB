@@ -1,0 +1,71 @@
+clienti
+{ 
+  "_id" : ObjectId(),
+  "nume" : String, 
+  "prenume" : String, 
+  "date_contact" : 
+  {
+    "telefon" : String,
+    "email" : String,
+    "adresa" : 
+    {
+      "strada" : String,
+      "oras" : String,
+      "judet" : String,
+      "tara" : String
+    }
+  }
+}
+
+
+comenzi
+{ 
+  "_id" : ObjectId(),
+  data_plasarii : Date, 
+  "modalitate_livrare" : String,
+  "modalitate_plata" : String,
+  "produse" : 
+  [
+    {
+      "nume_produs" : String,
+      "pret": Double number,
+      "livrat_EMAG" : Boolean,
+      "detalii" :
+      {
+        "procesor" : String,
+        "tip_procesor" : String,
+        "greutate" : Double number,
+        "RAM" : String,
+        "tip_stocare" : String,
+        "capacitate_SSD" : String,
+        "diagonala" : String,
+        "format_display" : String
+      },
+      "imagine" : String
+    },
+    {
+      "nume_produs" : String,
+      "pret" : Integer number,
+      "livrat_EMAG" : Boolean,
+      "detalii" :
+      {
+        "greutate" : String,
+        "culoare" : String,
+        "orgonomic" : true,
+        "greutate_suportata" : String
+      },
+      "imagine" : String
+    }
+  ],
+  "status" : String,
+  "_id_client": ObjectId()
+}
+
+recenzii
+{ 
+  "_id" : ObjectId(),
+  "comentariu": String,
+  "stele": Integer number,
+  "data": Date,
+  "_id_comanda": ObjectId()
+}
